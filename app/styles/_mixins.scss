@@ -1,0 +1,6 @@
+@mixin box{
+	background: $white;
+	border-bottom: 2px solid darken($white, 20%);
+	padding: 15px;
+	margin-bottom: 15px;
+}

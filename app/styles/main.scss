@@ -2,22 +2,92 @@
 // endbower
 $white: #ffffff;
 $dark-gray: #333333;
+$main-color: #f7571e;
 
+$komika: 'Komika', Arial, Helvetica, sans-serif;
 
 @import 'fonts';
+@import 'mixins';
 
-h1, h2{
-    font-family: 'Komika', Arial, Helvetica, sans-serif;
+*{
+	box-sizing: border-box;
 }
 
 body {
     background: url(../images/shattered.png);
     font-family: 'Anonymous Pro', Arial, Helvetica, sans-serif;
     color: $dark-gray;
+    padding: 0;
+    margin: 0;
 }
 
+h1, h2{
+    font-family: $komika;
+}
+
+
 .site-header{
-    .intro{
-        
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
+    color: $white;
+    .logo{
+    	margin-bottom: 30px;
+    	padding: 0 15px;
+    	img{
+    		max-width: 240px;
+    	}
     }
+    .preamble{
+    	background-color: $main-color;
+    	text-align: center;
+    	//background-image: url(../images/geometry.png);
+    }
+}
+main{
+	padding: 0 20px;
+	h2{
+		text-align: center;
+		color: $main-color;
+	}
+	.contact{
+		.person{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			color: $main-color;
+			@include box;
+			h3{
+				font-family: $komika;
+				font-size: 16px;
+				margin-top: 0;
+				margin-bottom: 8px;
+			}
+			a{
+				color: $main-color;
+				margin-bottom: 3px;
+			}
+		}
+	}
+	.games{
+		.card{
+			display: flex;
+			@include box;
+			img{
+				height: 80px;
+				width: 80px;
+			}
+			.text{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				padding-left: 15px;
+				h3,h4{
+					margin: 0;
+					margin-bottom: 5px;
+				}
+			}
+		}
+	}
 }
