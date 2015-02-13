@@ -24,6 +24,7 @@ body {
 
 h1, h2{
     font-family: $komika;
+    letter-spacing: 0.06em;
 }
 
 
@@ -44,13 +45,15 @@ h1, h2{
     	background-image: url(../images/geometry.png);
     	text-align: center;
     	width: 100%;
-    	h1{
-
-    	}
     	p{
     		max-width: 420px;
     		padding: 0 15px 10px;
     		margin: 10px auto;
+    	}
+    }
+    @media all and (min-width: $portrait){
+    	h1{
+    		font-size: 28px;
     	}
     }
 }
@@ -115,6 +118,7 @@ main{
 				}
 				h3{
 					font-size: 16px;
+					color: $main-color;
 				}
 				h4{
 					font-size: 14px;
@@ -196,7 +200,7 @@ main{
 				width: 49%;
 				margin-bottom: 13px;
 				h3{
-					font-size: 15px;
+					font-size: 18px;
 				}
 			}
 		}

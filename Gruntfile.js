@@ -244,7 +244,7 @@ module.exports = function (grunt) {
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
                     dest: '<%= config.dist %>/images'
                 }]
-            }
+            },
         },
 
         svgmin: {
@@ -410,8 +410,8 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        'modernizr',
-        'rev',
+        //'modernizr',
+        //'rev',
         'usemin',
         'htmlmin'
     ]);
