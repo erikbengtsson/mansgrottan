@@ -1,5 +1,6 @@
 // bower:scss
 // endbower
+$portrait: 700px;
 $white: #ffffff;
 $dark-gray: #333333;
 $main-color: #f7571e;
@@ -40,24 +41,42 @@ h1, h2{
     	}
     }
     .preamble{
-    	background-color: $main-color;
+    	background-image: url(../images/geometry.png);
     	text-align: center;
-    	//background-image: url(../images/geometry.png);
+    	width: 100%;
+    	h1{
+
+    	}
+    	p{
+    		max-width: 420px;
+    		padding: 0 15px 10px;
+    		margin: 10px auto;
+    	}
     }
 }
 main{
-	padding: 0 20px;
+	padding: 0 10px;
+	max-width: 420px;
+	margin: 0 auto;
 	h2{
 		text-align: center;
 		color: $main-color;
+		margin: 8px 0;
+	}
+	p{
+		margin: 8px 0;
 	}
 	.contact{
+		text-align: center;
 		.person{
 			display: flex;
 			flex-direction: column;
-			text-align: center;
+			align-items: center;
 			color: $main-color;
 			@include box;
+			img.avatar{
+				width: 80px;
+			}
 			h3{
 				font-family: $komika;
 				font-size: 16px;
@@ -100,19 +119,113 @@ main{
 				h4{
 					font-size: 14px;
 				}
-				.status{
-					&:before{
-						content: " ";
-						display: inline-block;
-						position: relative;
-						width: 14px;
-						height: 14px;
-						margin-right: 5px;
-						top: 1px;
-						border-radius: 50%;
-						background: green;
+				.misc{
+					font-size: 14px;
+					.status{
+						&:before{
+							content: " ";
+							display: inline-block;
+							position: relative;
+							width: 12px;
+							height: 12px;
+							margin-right: 5px;
+							top: 1px;
+							border-radius: 50%;
+							background: green;
+						}
 					}
 				}
+			}
+			&.broken{
+				.misc{
+					.status{
+						&:before{
+							background: red;
+						}
+					}
+				}
+			}
+			&.new{
+				&:before{
+					content: "Nytt!";
+					position: absolute;
+					left: -40px;
+					top: -10px;
+					display: block;
+					width: 113px;
+					height: 52px;
+					line-height: 70px;
+					text-align: center;
+					background: $main-color;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+	@media all and (min-width: $portrait){
+		max-width: $portrait;
+		.contact{
+			display: flex;
+			flex-wrap: wrap;
+			h2, p{
+				width: 100%;
+			}
+			.person{
+				width: 50%;
+				position: relative;
+				&:nth-of-type(even){
+					&:before{
+						content: " ";
+						border-left: 1px solid $main-color;
+						height: 100px;
+						position: absolute;
+						left: 0;
+						top: 28px;
+					}
+				}
+			}
+		}
+		.games{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			h2{
+				width: 100%;
+			}
+			.card{
+				width: 49%;
+				margin-bottom: 13px;
+				h3{
+					font-size: 15px;
+				}
+			}
+		}
+	}
+}
+.site-footer{
+	.flippers{
+		width: 100%;
+		position: relative;
+		background-image: url(../images/geometry.png);
+		height: 80px;
+		margin-top: 70px;
+		img{
+			display: block;
+			position: absolute;
+			width: 300px;
+			margin-left: -150px;
+			left: 50%;
+			bottom: 10px;
+		}
+	}
+	.copyright{
+
+	}
+	@media all and (min-width: $portrait){
+		.flippers{
+			img{
+				width: 360px;
+				margin-left: -180px;
 			}
 		}
 	}
